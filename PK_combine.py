@@ -135,7 +135,7 @@ The time range of the simulation can be selected through time_range.""")
         dose_iv = st.number_input("Dose IV (mg)", value=500.0)
         infusion_duration = st.number_input("Infusion Duration (h)", value=24)
         dose_im = st.number_input("Dose IM (mg)", value=1300.0)
-        start_im = st.number_input("Start IM (h)", value=0.0)
+        start_im = st.number_input("Start IM (h)", value=0)
         interval_dose_im = st.text_input("Interval Dose IM (h)", "0, 24, 48, 72, 96, 120")
         interval_dose_im = [int(x) for x in interval_dose_im.split(",")]
     with col2:
