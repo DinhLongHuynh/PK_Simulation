@@ -132,18 +132,18 @@ The time range of the simulation can be selected through time_range.""")
     col1, col2 = st.columns(2)
     
     with col1:
-        dose_iv = st.number_input("Dose IV (mg)", value=500)
+        dose_iv = st.number_input("Dose IV (mg)", value=500.0)
         infusion_duration = st.number_input("Infusion Duration (h)", value=24)
-        dose_im = st.number_input("Dose IM (mg)", value=1300)
-        start_im = st.number_input("Start IM (h)", value=0)
+        dose_im = st.number_input("Dose IM (mg)", value=1300.0)
+        start_im = st.number_input("Start IM (h)", value=0.0)
         interval_dose_im = st.text_input("Interval Dose IM (h)", "0, 24, 48, 72, 96, 120")
         interval_dose_im = [int(x) for x in interval_dose_im.split(",")]
     with col2:
-        CL = st.number_input("Clearance (L/h)", value=9)
-        Vd = st.number_input("Volume of Distribution (L)", value=50)
+        CL = st.number_input("Clearance (L/h)", value=9.00)
+        Vd = st.number_input("Volume of Distribution (L)", value=50.00)
         ke = st.number_input("Elimination Constant (h-1)", value=0.228)
-        ka = st.number_input("Absorption Constant (h-1)", value=0.02)
-        F = st.number_input("Bioavailability", value=1.0)
+        ka = st.number_input("Absorption Constant (h-1)", value=0.020)
+        F = st.number_input("Bioavailability", value=1.00)
     
     time_range = st.number_input("Time Range (h)", value=200)
 
@@ -171,17 +171,17 @@ It also take the omega arguments as the unexplained interindividual variability.
     col1, col2 = st.columns(2)
 
     with col1:
-        dose = st.number_input("Dose (mg)", value=100)
-        CL_pop = st.number_input("CL Population Mean (L/h)", value=2.0)
-        V_pop = st.number_input("V Population Mean (L)", value=50)
+        dose = st.number_input("Dose (mg)", value=100.0)
+        CL_pop = st.number_input("CL Population Mean (L/h)", value=2.00)
+        V_pop = st.number_input("V Population Mean (L)", value=50.00)
         ka_pop = st.number_input("ka Population Mean (h-1)", value=None)
-        F_pop = st.number_input("F Population Mean", value=1.0)
+        F_pop = st.number_input("F Population Mean", value=1.00)
     with col2:
         n_patients = st.number_input("Number of Patients", value=1)
-        omegaCL = st.number_input("Omega CL", value=0)
-        omegaV = st.number_input("Omega V", value=0)
-        omegaka = st.number_input("Omega ka", value=0)
-        omegaF = st.number_input("Omega F", value=0)
+        omegaCL = st.number_input("Omega CL", value=0.00)
+        omegaV = st.number_input("Omega V", value=0.00)
+        omegaka = st.number_input("Omega ka", value=0.00)
+        omegaF = st.number_input("Omega F", value=0.00)
     
     C_limit = st.number_input("C Limit (mg/L)", value=None)
     sampling_points = st.text_input("Sampling Points (h)", "0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24")
@@ -205,13 +205,13 @@ It also take the omega arguments as the unexplained interindividual variability.
     with col1: 
         Emax = st.number_input("Emax", value=6.43)
         EC50 = st.number_input("EC50", value=5.38)
-        Ebaseline = st.number_input("Ebaseline", value=1.0)
-        hill = st.number_input("Hill Coefficient", value=1.0)
+        Ebaseline = st.number_input("Ebaseline", value=1.00)
+        hill = st.number_input("Hill Coefficient", value=1.00)
     with col2:
-        omegaEmax = st.number_input("Omega Emax", value=0)
-        omegaEC50 = st.number_input("Omega EC50", value=0)
-        omegaEbaseline = st.number_input("Omega Ebaseline", value=0)
-        omegahill = st.number_input("Omega Hill", value=0)
+        omegaEmax = st.number_input("Omega Emax", value=0.00)
+        omegaEC50 = st.number_input("Omega EC50", value=0.00)
+        omegaEbaseline = st.number_input("Omega Ebaseline", value=0.00)
+        omegahill = st.number_input("Omega Hill", value=0.00)
     n_patients = st.number_input("Number of Patients", value=1)
     E_limit = st.number_input("E Limit", value=None)
     sampling_conc = st.text_input("Sampling Concentrations", "2, 4, 5, 6, 7, 8, 10, 20, 50, 100")
